@@ -6,49 +6,36 @@
 /*   By: ilallali <ilallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 12:42:53 by ilallali          #+#    #+#             */
-/*   Updated: 2025/01/26 18:46:37 by ilallali         ###   ########.fr       */
+/*   Updated: 2025/01/28 12:53:32 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	l;
-
-	l = 0;
-	if (s == NULL)
-		return 0;
-	while (s[l])
-	{
-		l++;
-	}
-	return (l);
-}
 char	*ft_strdup(const char *s)
 {
 	char	*str;
 	int		i;
-	
+
 	i = 0;
 	str = malloc(ft_strlen(s)+ 1);
 	if (str == NULL)
 		return (NULL);
-	while(s[i])
+	while (s[i])
 	{
 		str[i] = s[i];
 		i++;
 	}
-	str[i]= '\0';
+	str[i] = '\0';
 	return (str);
 }
 
-int	 ft_strchr(const char *str, int c)
+int	ft_strchr(const char *str, int c)
 {
 	size_t	i;
 
 	i = 0;
-	if(!str)
+	if (!str)
 		return (-1);
 	while (str[i])
 	{
@@ -58,6 +45,7 @@ int	 ft_strchr(const char *str, int c)
 	}
 	return (-1);
 }
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
 	size_t	l;
@@ -80,6 +68,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	}
 	return (l);
 }
+
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
 	size_t	srcl;
@@ -103,7 +92,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	dst[destl + in] = '\0';
 	return (destl + srcl);
 }
-char	*ft_strjoin(char  *s1, char  *s2)
+
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	l1;
